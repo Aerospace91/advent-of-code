@@ -7,7 +7,7 @@ for line in lines:
     num_list = []
     digit_list = []
     res = re.findall(r'\d+', line)
-    for num in res:
+    for string in res:
         num_list.append(num)
     for num in num_list:
         for digit in num:
