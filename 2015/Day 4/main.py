@@ -13,7 +13,7 @@ i = 0
 while hash_not_found:
     hashify = user_input + str(i)
     hashed_string = computeMD5hash(hashify)
-    if hashed_string[:5] == '00000':
+    if hashed_string[:6] == '000000':
         hash_not_found = False
     i += 1
 
