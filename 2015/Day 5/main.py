@@ -24,8 +24,5 @@ for line in lines:
             has_string = True
     if is_vowel and is_double and not has_string:
         nice += 1
-        print('nice')
-    else:
-        print(f'naughty: {is_vowel} {is_double} {has_string}')
 
 print(nice)
