@@ -48,7 +48,3 @@ for direction in user_input:
             track_coordinates(x2, y2)
 
 print(len(visited_coordinates))
-print(x)
-print(y)
-print(x2)
-print(y2)
