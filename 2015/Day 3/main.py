@@ -3,8 +3,9 @@ user_input = open('input.txt').read()
 
 visited_coordinates = {}
 
-x, y = 0, 0
+x, y, x2, y2 = 0, 0, 0, 0
 delivered = 0
+count = 0
 
 def track_coordinates(x, y):
     coordinate = (x, y)
@@ -16,17 +17,38 @@ def track_coordinates(x, y):
 
 track_coordinates(x, y)
 for direction in user_input:
+    count += 1
     if direction == '>':
-        x += 1
-        track_coordinates(x, y)
+        if count % 2 == 0:
+            x += 1
+            track_coordinates(x, y)
+        else:
+            x2 += 1
+            track_coordinates(x2, y2)
     if direction == '<':
-        x -= 1
-        track_coordinates(x, y)
+        if count % 2 == 0:
+            x -= 1
+            track_coordinates(x, y)
+        else:
+            x2 -= 1
+            track_coordinates(x2, y2)
     if direction == '^':
-        y += 1
-        track_coordinates(x, y)
+        if count % 2 == 0:
+            y += 1
+            track_coordinates(x, y)
+        else:
+            y2 += 1
+            track_coordinates(x2, y2)
     if direction == 'v':
-        y -= 1
-        track_coordinates(x, y)
+        if count % 2 == 0:
+            y -= 1
+            track_coordinates(x, y)
+        else:
+            y2 -= 1
+            track_coordinates(x2, y2)
 
 print(len(visited_coordinates))
+print(x)
+print(y)
+print(x2)
+print(y2)
