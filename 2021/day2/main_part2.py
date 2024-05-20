@@ -1,5 +1,5 @@
 lines = open('input.txt').read().splitlines()
-pos, depth = 0, 0
+pos, depth, aim = 0, 0, 0
 directions = []
 for line in lines:
     split = line.split()
@@ -8,10 +8,11 @@ for line in lines:
 for direction in directions:
     if direction[0] == 'forward':
         pos += int(direction[1])
+        depth += aim * int(direction[1])
     elif direction[0] == 'down':
-        depth += int(direction[1])
+        aim += int(direction[1])
     elif direction[0] == 'up':
-        depth -= int(direction[1])
+        aim -= int(direction[1])
 
-print(pos, depth)
+print(pos, depth, aim)
 print(pos * depth)
