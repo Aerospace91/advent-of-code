@@ -15,5 +15,10 @@ def part1(left, right):
     differences = [abs(a - b) for a, b in zip(sorted_left, sorted_right)]
     return sum(differences)
 
+def part2(left, right):
+    similarity = [a * right.count(a) for a in left]
+    return sum(similarity)
+    
 
 print(part1(left_lst, right_lst))
+print(part2(left_lst, right_lst))
